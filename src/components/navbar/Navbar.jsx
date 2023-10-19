@@ -10,10 +10,10 @@ const Navbar = () => {
     const [info, setInfo] = useState({});
     const { photoURLs } = info;
     useEffect(() => {
-        fetch('http://localhost:5000/banner')
+        fetch('http://localhost:5000/brands/banner')
             .then(res => res.json())
             .then(data => {
-                console.log(data.photoURLs, data.titles);
+                // console.log(data.photoURLs, data.titles);
                 setInfo(data);
             })
             .catch(error => console.log(error.message));

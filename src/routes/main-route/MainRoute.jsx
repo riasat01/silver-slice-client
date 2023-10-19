@@ -21,7 +21,7 @@ const MainRoute = createBrowserRouter([
             },
             {
                 path:'/:name',
-                element: <BrandPage></BrandPage>,
+                element: <PrivateRoute><BrandPage></BrandPage></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/brands/${params.name}`)
             },
             {

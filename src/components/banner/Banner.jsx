@@ -10,7 +10,7 @@ const Banner = () => {
     const [info, setInfo] = useState({});
     const { photoURLs, titles } = info;
     useEffect(() => {
-        fetch('http://localhost:5000/banner')
+        fetch('http://localhost:5000/brands/banner')
             .then(res => res.json())
             .then(data => {
                 // console.log(data.photoURLs, data.titles);

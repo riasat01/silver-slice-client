@@ -6,6 +6,7 @@ import { UserAuth } from "../../auth-provider/AuthProvider";
 const Register = () => {
     
     const { setLoading, userWithEmail, setUserName } = useContext(UserAuth);
+    // console.log(UserAuth, setLoading, userWithEmail, setUserName)
     const navigate = useNavigate();
 
     // where to re route
@@ -33,6 +34,7 @@ const Register = () => {
                 setUserName(name)
                 .then(() => {
                     // console.log(`user name updated`);
+                    setLoading(false);
                     swal(`Congratulation ${userCredential?.user?.displayName}`, `You have successfully registered`, `success`)
                     location?.state ? navigate(`${location?.state}`) : navigate(`/`);
                 })
