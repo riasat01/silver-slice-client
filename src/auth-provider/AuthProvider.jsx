@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import auth from "../firebase/firebase.config";
 
-export const UserAuth = createContext(null);
+export const UserAuth = createContext({});
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({children}) => {

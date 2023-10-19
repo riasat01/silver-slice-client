@@ -76,7 +76,7 @@ const Navbar = () => {
         }
     </>
     return (
-        <div className="absolute max-w-screen w-full top-0 text-gray-300">
+        <div className="absolute max-w-screen w-full top-0 text-gray-300 z-50">
             <nav className="flex justify-between items-center max-w-screen-2xl mx-auto mt-4 px-4 md:px-12">
                 <details className="md:hidden dropdown dropdown-bottom">
                     <summary className="p-0 btn"><AiOutlineMenu className="text-xl"></AiOutlineMenu></summary>
@@ -84,7 +84,7 @@ const Navbar = () => {
                         {navs}
                     </ul>
                 </details>
-                <h2 className="text-3xl font-bold font-indie-flower">Splendora</h2>
+                <h2 className="text-3xl font-bold font-indie-flower">SilverSlice</h2>
                 <ul className="hidden md:flex items-center gap-6">
                     {navs}
                 </ul>
