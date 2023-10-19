@@ -1,12 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import defaultImage from '../../assets/user-33638_1280.png';
-import {AiOutlineMenu} from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
 import swal from 'sweetalert';
 import { UserAuth } from "../../auth-provider/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut, loading } = useContext(UserAuth);
+    const [info, setInfo] = useState({});
+    const { photoURLs } = info;
+    useEffect(() => {
+        fetch('http://localhost:5000/banner')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.photoURLs, data.titles);
+                setInfo(data);
+            })
+            .catch(error => console.log(error.message));
+    }, [])
 
     // sign out User
     const handleSignOut = () => {
@@ -79,12 +90,15 @@ const Navbar = () => {
         <div className="absolute max-w-screen w-full top-0 text-gray-300 z-50">
             <nav className="flex justify-between items-center max-w-screen-2xl mx-auto mt-4 px-4 md:px-12">
                 <details className="md:hidden dropdown dropdown-bottom">
-                    <summary className="p-0 btn"><AiOutlineMenu className="text-xl"></AiOutlineMenu></summary>
+                    <summary className="p-0 btn  bg-transparent border-0"><AiOutlineMenu className="text-2xl"></AiOutlineMenu></summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                         {navs}
                     </ul>
                 </details>
-                <h2 className="text-3xl font-bold font-indie-flower">SilverSlice</h2>
+                <section className="flex justify-center items-center">
+                    <img className="h-10" src={photoURLs?.cover} alt="" />
+                    <h2 className="text-3xl font-bold font-indie-flower">SilverSlice</h2>
+                </section>
                 <ul className="hidden md:flex items-center gap-6">
                     {navs}
                 </ul>
