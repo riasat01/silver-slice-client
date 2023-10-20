@@ -1,4 +1,5 @@
 import swal from "sweetalert";
+import PropTypes from 'prop-types';
 
 const CartItem = ({item, items, setItems}) => {
 
@@ -44,5 +45,11 @@ const CartItem = ({item, items, setItems}) => {
         </div>
     );
 };
+
+CartItem.propTypes = {
+    item: PropTypes.object,
+    items: PropTypes.array,
+    setItems: PropTypes.func
+}
 
 export default CartItem;
