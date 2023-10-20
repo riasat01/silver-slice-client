@@ -1,3 +1,5 @@
+import swal from "sweetalert";
+
 const AddProduct = () => {
 
     const handleAddProduct = e => {
@@ -8,9 +10,18 @@ const AddProduct = () => {
         const brand = form.brand.value;
         const type = form.type.value;
         const price = form.price.value;
+        const description = form.description.value;
         const rating = form.rating.value;
 
-        const product = {photo, name, brand, type, price, rating};
+        if(!parseFloat(price)){
+            swal(`Error`, 'Price must be a decimal value', `error`);
+            return;
+        }else if(!parseFloat(rating)){
+            swal(`Error`, 'Rating must be a decimal value', `error`);
+            return;
+        }
+
+        const product = {photo, name, brand, type, price, description, rating};
         fetch(`http://localhost:5000/products/${name}`, {
             method: 'POST',
             headers: {
@@ -20,7 +31,9 @@ const AddProduct = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data);
+            swal(`Congratulation`, `Products added successfully`, `success`);
+            form.reset();
         })
         .catch(error => console.log(error.message));
     }
@@ -75,13 +88,19 @@ const AddProduct = () => {
                                 <label className="label">
                                     <span className="label-text">Price</span>
                                 </label>
-                                <input type="number" placeholder="Price" name="price" className="input input-bordered" required />
+                                <input type="text" placeholder="Price" name="price" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Description</span>
+                                </label>
+                                <textarea className="textarea textarea-bordered" placeholder="Description" name="description" required></textarea>
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Rating</span>
                                 </label>
-                                <input type="number" placeholder="Rating" name="rating" className="input input-bordered" required />
+                                <input type="text" placeholder="Rating" name="rating" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
                                 <input type="submit" value="Add" className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold" />

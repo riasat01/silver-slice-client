@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
-import BrandBanner from "../../../components/brand-banner/BrandBanner";
+import BrandBanner from "../../components/brand-banner/BrandBanner";
 import { useEffect, useState } from "react";
-import ProductCard from "../../../components/product-card/ProductCard";
+import ProductCard from "../../components/product-card/ProductCard";
 
 const BrandPage = () => {
     const data = useLoaderData();
