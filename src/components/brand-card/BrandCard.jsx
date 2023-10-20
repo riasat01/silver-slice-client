@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const BrandCard = ({item}) => {
 
     const {name, photoURLs} = item
-    // const cardStyle = {base: {
-    //     backgroundImage: `url(${photoURLs?.cover}), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1))`,
-    //     backgroundBlendMode: 'overlay',
-    //     backgroundSize: 'cover',
-    //     transition: 'all 0.5s ease-in-out'
-    // },
-    // hover: {
-    //     backgroundSize: '120%',
-    //     backgroundImage: `url(${photoURLs?.cover}), linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3))`
-    // }}
+    
 
     const style = {
         backgroundImage: `url(${photoURLs?.cover}), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1))`,
@@ -29,5 +21,9 @@ const BrandCard = ({item}) => {
         </div>
     );
 };
+
+BrandCard.propTypes = {
+    item: PropTypes.object
+}
 
 export default BrandCard;

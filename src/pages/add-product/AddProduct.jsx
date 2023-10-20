@@ -24,7 +24,7 @@ const AddProduct = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             swal(`Congratulation`, `Products added successfully`, `success`);
             form.reset();
         })

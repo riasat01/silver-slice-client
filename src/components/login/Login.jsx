@@ -17,7 +17,7 @@ const Login = () => {
         e?.preventDefault();
         loginWithEMail(e?.target?.email?.value, e?.target?.password?.value)
             .then(userCredintial => {
-                console.log(userCredintial.user);
+                // console.log(userCredintial.user);
                 swal(`Congratulation ${user?.displayName ? user?.displayName : ``}`, `You have successfully signed in`, `success`)
                 location?.state ? navigate(`${location?.state}`) : navigate(`/`);
             })

@@ -6,9 +6,10 @@ import auth from "../firebase/firebase.config";
 export const UserAuth = createContext({});
 const googleProvider = new GoogleAuthProvider();
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [theme, setTheme] = useState('light');
 
     // create user with and password
     const userWithEmail = (email, password) => {
@@ -33,7 +34,7 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name
-          })
+        })
     }
 
     // delete account
@@ -53,10 +54,19 @@ const AuthProvider = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false);
-            console.log(currentUser);
+            // console.log(currentUser);
         });
         return () => unSubscribe();
     }, [])
+
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
 
     // context value
     const userInfo = {
@@ -68,9 +78,10 @@ const AuthProvider = ({children}) => {
         continueWithGoogle,
         setUserName,
         deleteAccount,
-        logOut
+        logOut,
+        toggleTheme
     };
-   
+
     return (
         <UserAuth.Provider value={userInfo}>
             {children}
