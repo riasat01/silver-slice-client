@@ -1,29 +1,4 @@
-const AddProduct = () => {
-
-    const handleAddProduct = e => {
-        e.preventDefault();
-        const form = e.target;
-        const photo = form.photo.value;
-        const name = form.name.value;
-        const brand = form.brand.value;
-        const type = form.type.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-
-        const product = {photo, name, brand, type, price, rating};
-        fetch(`http://localhost:5000/products/${name}`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(product)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
-        .catch(error => console.log(error.message));
-    }
+const UpdateProduct = () => {
     return (
         <div className="hero min-h-screen bg-base-200 mt-16">
             <div className="hero-content flex-col w-full md:w-1/2">
@@ -32,7 +7,7 @@ const AddProduct = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <form onSubmit={handleAddProduct}>
+                        <form>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Image URL</span>
@@ -84,7 +59,7 @@ const AddProduct = () => {
                                 <input type="number" placeholder="Rating" name="rating" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
-                                <input type="submit" value="Add" className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold" />
+                                <button className="btn btn-primary">Add</button>
                             </div>
                         </form>
                     </div>
@@ -94,4 +69,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default UpdateProduct;
