@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
                         <Link to={`/product-details/${_id}`}><button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Details</button></Link>
                     </div>
                     <div className="card-actions">
-                        <button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Update</button>
+                        <Link to={`/update-product/${_id}`}><button className="w-full bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Update</button></Link>
                     </div>
                 </section>
             </div>

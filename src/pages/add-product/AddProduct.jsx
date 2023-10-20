@@ -13,14 +13,7 @@ const AddProduct = () => {
         const description = form.description.value;
         const rating = form.rating.value;
 
-        if(!parseFloat(price)){
-            swal(`Error`, 'Price must be a decimal value', `error`);
-            return;
-        }else if(!parseFloat(rating)){
-            swal(`Error`, 'Rating must be a decimal value', `error`);
-            return;
-        }
-
+        
         const product = {photo, name, brand, type, price, description, rating};
         fetch(`http://localhost:5000/products/${name}`, {
             method: 'POST',
