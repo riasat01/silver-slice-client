@@ -99,7 +99,7 @@ const Navbar = () => {
                         user ?
                             <section className="flex gap-6 items-center">
                                 <details className="dropdown dropdown-end">
-                                    <summary className="p-0 btn"><img className="h-10 rounded-full" src={user.photoURL ? user.photoURL : defaultImage} alt={`image of ${user.displayName}`} /></summary>
+                                    <summary className="p-0 btn"><img className="h-10 rounded-full" src={user?.photoURL ? user?.photoURL : defaultImage} alt={`image of ${user.displayName}`} /></summary>
                                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                                         <li><p>{user.displayName}</p></li>
                                         <li><button onClick={handleSignOut} className="bg-slate-700 bg-opacity-50 hover:bg-opacity-100 hover:bg-gradient-to-br from-orange-400 to-red-700 hover:text-white rounded-xl px-4 py-2 font-semibold">Log Out</button></li>

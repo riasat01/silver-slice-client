@@ -8,7 +8,7 @@ const Brands = () => {
         fetch('http://localhost:5000/brands')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setInfo(data);
             })
             .catch(error => console.log(error.message));

@@ -10,7 +10,7 @@ const BrandPage = () => {
         fetch(`http://localhost:5000/products/${data.name}`)
         .then(res => res.json())
         .then(info => {
-            console.log(info);
+            // console.log(info);
             setProducts(info);
         })
     },[])

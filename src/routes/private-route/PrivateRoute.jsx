@@ -7,7 +7,7 @@ import { UserAuth } from "../../auth-provider/AuthProvider";
 const PrivateRoute = ({children}) => {
     const {user,loading} = useContext(UserAuth);
     const location = useLocation();
-    console.log(location.pathname);
+    // console.log(location.pathname);
     if(loading){
         <span className="loading loading-infinity loading-lg"></span>
         return;
