@@ -83,7 +83,7 @@ const Navbar = () => {
         </li>
     </>
     return (
-        <div className="absolute max-w-screen w-full top-0 text-gray-400 z-50">
+        <div className="absolute max-w-screen w-full top-0 text-gray-300 z-50">
             <nav className="flex justify-between items-center max-w-screen-2xl mx-auto mt-4 px-4 md:px-12">
                 <details className="md:hidden dropdown dropdown-bottom">
                     <summary className="p-0 btn  bg-transparent border-0"><AiOutlineMenu className="text-2xl"></AiOutlineMenu></summary>
@@ -93,7 +93,7 @@ const Navbar = () => {
                 </details>
                 <section className="flex justify-center items-center">
                     <img className="h-10" src={photoURLs?.cover} alt="" />
-                    <h2 className="text-3xl font-bold text-slate-400">SilverSlice</h2>
+                    <h2 className="text-3xl font-bold">SilverSlice</h2>
                 </section>
                 <ul className="hidden md:flex items-center gap-6">
                     {navs}

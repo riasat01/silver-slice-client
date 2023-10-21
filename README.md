@@ -13,3 +13,7 @@ Currently, two official plugins are available:
 3. Sign up using email-password or Google
 4. Routing based on user state
 5. Personalized cart
+
+# Live Link
+
+https://silverslice-731f3.web.app/
