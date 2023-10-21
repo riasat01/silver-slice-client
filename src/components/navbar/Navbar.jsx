@@ -10,7 +10,7 @@ const Navbar = () => {
     const [info, setInfo] = useState({});
     const { photoURLs } = info;
     useEffect(() => {
-        fetch('http://localhost:5000/brands/banner')
+        fetch('https://silver-slice-server.vercel.app/brands/banner')
             .then(res => res.json())
             .then(data => {
                 // console.log(data.photoURLs, data.titles);

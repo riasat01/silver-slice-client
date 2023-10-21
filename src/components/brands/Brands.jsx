@@ -5,7 +5,7 @@ const Brands = () => {
 
     const [info, setInfo] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/brands')
+        fetch('https://silver-slice-server.vercel.app/brands')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

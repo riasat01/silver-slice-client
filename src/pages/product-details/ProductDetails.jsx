@@ -14,7 +14,7 @@ const ProductDetails = () => {
         const email = user?.email;
         const data = {...product, email}
         console.log(data);
-        fetch(`http://localhost:5000/cart/${user?.email}`,{
+        fetch(`https://silver-slice-server.vercel.app/cart/${user?.email}`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

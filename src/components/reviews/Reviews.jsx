@@ -6,7 +6,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState({});
     const { review } = reviews;
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://silver-slice-server.vercel.app/reviews`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

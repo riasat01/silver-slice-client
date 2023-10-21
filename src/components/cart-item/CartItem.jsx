@@ -6,7 +6,7 @@ const CartItem = ({item, items, setItems}) => {
     const { _id, photo, name, brand, type, price, description, rating } = item;
 
     const handleRemove = () => {
-        fetch(`http://localhost:5000/cart/${_id}`,{
+        fetch(`https://silver-slice-server.vercel.app/cart/${_id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())

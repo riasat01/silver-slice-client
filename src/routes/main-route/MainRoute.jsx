@@ -25,7 +25,7 @@ const MainRoute = createBrowserRouter([
             {
                 path:'/brands/:name',
                 element: <PrivateRoute><BrandPage></BrandPage></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/brands/${params.name}`)
+                loader: ({params}) => fetch(`https://silver-slice-server.vercel.app/brands/${params.name}`)
             },
             {
                 path: `/login`,
@@ -48,12 +48,12 @@ const MainRoute = createBrowserRouter([
             {
                 path: `/product-details/:id`,
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product-details/${params.id}`)
+                loader: ({params}) => fetch(`https://silver-slice-server.vercel.app/product-details/${params.id}`)
             },
             {
                 path: '/update-product/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product-details/${params.id}`)
+                loader: ({params}) => fetch(`https://silver-slice-server.vercel.app/product-details/${params.id}`)
             },
             {
                 path: '/my-cart',

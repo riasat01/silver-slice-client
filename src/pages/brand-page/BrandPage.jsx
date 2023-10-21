@@ -7,7 +7,7 @@ const BrandPage = () => {
     const data = useLoaderData();
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${data.name}`)
+        fetch(`https://silver-slice-server.vercel.app/products/${data.name}`)
             .then(res => res.json())
             .then(info => {
                 // console.log(info);

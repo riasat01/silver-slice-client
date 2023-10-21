@@ -8,7 +8,7 @@ const MyCart = () => {
     const {user} = useContext(UserAuth);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cart/${user?.email}`)
+        fetch(`https://silver-slice-server.vercel.app/cart/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data);

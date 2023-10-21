@@ -19,7 +19,7 @@ const UpdateProduct = () => {
 
         
         const product = {photo, name, brand, type, price, description, rating};
-        fetch(`http://localhost:5000/product-details/${_id}`, {
+        fetch(`https://silver-slice-server.vercel.app/product-details/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

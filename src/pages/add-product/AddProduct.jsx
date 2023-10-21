@@ -15,7 +15,7 @@ const AddProduct = () => {
 
         
         const product = {photo, name, brand, type, price, description, rating};
-        fetch(`http://localhost:5000/products/${name}`, {
+        fetch(`https://silver-slice-server.vercel.app/products/${name}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
